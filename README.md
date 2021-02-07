@@ -27,3 +27,6 @@ SuperTest https://github.com/visionmedia/supertest#readme
 npm start
 
 
+# Para probar el endpoint
+npm run test
+

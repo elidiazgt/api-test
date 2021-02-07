@@ -1,13 +1,10 @@
 // server.js
 // where your node app starts
-
-// we've started you off with Express (https://expressjs.com/)
-// but feel free to use whatever libraries or frameworks you'd like through `package.json`.
 const express = require("express");
 const app = express();
+const cors = require('cors');
 
-// send the default array
-app.get("/iecho", (request, response) => {
+app.get("/iecho", cors(), (request, response) => {
   // express helps us take JS objects and send them as JSON
   var text = request.query.text;
   if (text) {
@@ -22,7 +19,6 @@ app.get("/iecho", (request, response) => {
   }
 });
 
-// listen for requests :)
-const listener = app.listen(process.env.PORT, () => {
-  console.log("Your app is listening on port " + listener.address().port);
-});
+
+
+module.exports = app;
